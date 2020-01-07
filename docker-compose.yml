@@ -2,6 +2,8 @@ version: '3'
 services:
   db:
     image: postgres:latest
+    ports:
+      - "5432:5432"
     restart: always
     environment:
       - POSTGRES_USER=emerge
@@ -13,7 +15,7 @@ services:
   
   app:
     build:
-      context: https://github.com/piotr-piotr/todo.git
+      context: https://github.com/piotr-piotr/todotest.git
     restart: always
     ports:
       - "8080:8080"
